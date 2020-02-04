@@ -11,7 +11,7 @@ function setup() {
     createCanvas(600, 600);
     imge = createCapture({
         audio: false,
-        imge: {
+        video: {
             facingMode: {
                 exact: "environment"
             }
