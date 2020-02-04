@@ -1,4 +1,4 @@
-let imge;
+var video;
 let classifier;
 // load the model
 function preload() {
@@ -9,7 +9,7 @@ function preload() {
 
 function setup() {
     createCanvas(600, 600);
-    imge = createCapture({
+    video = createCapture({
         audio: false,
         video: {
             facingMode: {
@@ -24,14 +24,14 @@ function setup() {
 
 function classifyimage() {
     
-    classifier.classify(imge, gotResults);
+    classifier.classify(video, gotResults);
     
     
 }
 
 function draw() {
     background(200);
-    image(imge, 0, 0);
+    image(video, 0, 0);
     textSize(40);
     textAlign(CENTER, CENTER);
     fill(255,0,0);
