@@ -46,7 +46,7 @@ var pro;
 let rest;
 function gotResults(error, results) {
     if (error) {
-        // console.error(error);
+        console.error(error);
         return;
     }
 
