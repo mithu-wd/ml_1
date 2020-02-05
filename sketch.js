@@ -9,7 +9,7 @@ function preload() {
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
-    background(200);
+    background(255);
     video = createCapture({
         audio: false,
         video: {
@@ -19,7 +19,6 @@ function setup() {
         }
     });
     video.hide();
-    video.size(window.innerWidth, window.innerHeight);
 
     classifyimage();
 
