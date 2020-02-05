@@ -9,7 +9,6 @@ function preload() {
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
-    background(0);
     video = createCapture({
         audio: false,
         video: {
@@ -34,14 +33,20 @@ function classifyimage() {
 
 function draw() {
     image(video,10,10);
-    textSize(32);
-    textAlign(CENTER, CENTER);
-    fill(255);
-    text(rest, width / 2, height / 2);
+if(rest==sicssor){
+    background(255,0,0);
+
+}
+ else if(rest==stone){
+     background(0,255,0);
 
 
 
 }
+    else if(rest==paper){
+    
+    background(0,0,255);
+    }
 var pro;
 let rest;
 function gotResults(error, results) {
