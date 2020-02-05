@@ -38,8 +38,8 @@ function draw() {
     textSize(40);
     textAlign(CENTER, CENTER);
     fill(0,0,255);
-    text(rest, width / 2, height / 2);
-    text(pro, width / 2, height / 1.5);
+    createP(rest, width / 2, height / 2);
+    createP(pro, width / 2, height / 1.5);
 
 
 
