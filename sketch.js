@@ -9,7 +9,7 @@ function preload() {
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
-    background(255);
+    background(200);
     video = createCapture({
         audio: false,
         video: {
@@ -35,11 +35,11 @@ function classifyimage() {
 
 function draw() {
     image(video, window.innerWidth, window.innerHeight);
-    textSize(40);
+    textSize(32);
     textAlign(CENTER, CENTER);
     fill(0,0,255);
-    createP(rest, width / 2, height / 2);
-    createP(pro, width / 2, height / 1.5);
+    text(rest, width / 2, height / 2);
+    text(pro, width / 2, height / 3);
 
 
 
