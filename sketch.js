@@ -33,12 +33,11 @@ function classifyimage() {
 }
 
 function draw() {
-    image(video,0,0);
+    image(video,10,10);
     textSize(32);
     textAlign(CENTER, CENTER);
-    fill(0,0,255);
+    fill(255);
     text(rest, width / 2, height / 2);
-    text(pro, width / 2, height / 3);
 
 
 
@@ -52,6 +51,5 @@ function gotResults(error, results) {
     }
 
     rest = (results[0].label);
-    pro = (results[0].confidence * 100);
     classifyimage();
 }
