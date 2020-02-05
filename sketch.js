@@ -33,7 +33,7 @@ function classifyimage() {
 }
 
 function draw() {
-    image(video,Width,height);
+    image(video,0,0);
     textSize(32);
     textAlign(CENTER, CENTER);
     fill(0,0,255);
