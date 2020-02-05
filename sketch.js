@@ -47,6 +47,7 @@ if(rest==sicssor){
     
     background(0,0,255);
     }
+}
 var pro;
 let rest;
 function gotResults(error, results) {
