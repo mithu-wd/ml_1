@@ -33,17 +33,17 @@ function classifyimage() {
 
 function draw() {
     image(video,10,10);
-if(rest==sicssor){
+if(rest=="scissor"){
     background(255,0,0);
 
 }
- else if(rest==stone){
+ else if(rest=="stone"){
      background(0,255,0);
 
 
 
 }
-    else if(rest==paper){
+    else if(rest=="paper"){
     
     background(0,0,255);
     }
