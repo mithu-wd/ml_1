@@ -9,7 +9,7 @@ function preload() {
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
-    background(255, 0, 0);
+    background(255);
     video = createCapture({
         audio: false,
         video: {
