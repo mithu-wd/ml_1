@@ -28,7 +28,7 @@ function draw() {
       var bright = (r + g + b) / 3;
       var w = map(bright, 0, 255, 0, vScale);
       noStroke();
-      fill(255);
+      fill(r,g,b);
       rectMode(CENTER);
       rect(x * vScale, y * vScale, w, w);
     }
