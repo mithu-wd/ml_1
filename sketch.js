@@ -152,11 +152,10 @@ function draw() {
       var g = video.pixels[index + 1];
       var b = video.pixels[index + 2];
       var bright = (r + g + b) / 3;
-      var w = map(bright, 0, 255, 0, vScale);
-      noStroke();
-      fill(255);
-      rectMode(CENTER);
-      rect(x * vScale, y * vScale, w, w);
+   if(bright>=127){
+    set(x,y,red)
+   
+   }
     }
   }
 
