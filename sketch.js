@@ -153,7 +153,7 @@ function draw() {
       var b = video.pixels[index + 2];
       var bright = (r + g + b) / 3;
    if(bright>=127){
-    set(x,y,red)
+    set(x,y,"red")
    
    }
     }
