@@ -13,6 +13,7 @@ function setup() {
             }
         }
     });
+  set(10,10,white)
   video.size(width / vScale, height / vScale);
 }
 
@@ -29,7 +30,7 @@ function draw() {
       var w = map(bright, 0, 255, 0, vScale);
       noStroke();
       let c=color(r,g,b)
-      set(x,y,c);
+//       set(x,y,c);
 //       rectMode(CENTER);
 //       rect(x * vScale, y * vScale, w, w);
     }
