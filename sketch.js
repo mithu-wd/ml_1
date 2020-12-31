@@ -87,6 +87,7 @@ function draw() {
     
     for(let x=0;x<=video.width;x++){
         for(let y=0;y<=video.height;y++){
+            video.loadPixels()
         let clr=get(x,y)
         if((clr[0]+clr[1]+clr[2])/3>=200){
             point(x, y)
@@ -97,4 +98,6 @@ function draw() {
         }
 
     }
+            video.updatePixels()
+    
 }
