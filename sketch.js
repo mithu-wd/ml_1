@@ -5,7 +5,14 @@ var vScale = 16;
 function setup() {
   createCanvas(640, 480);
   pixelDensity(1);
-  video = createCapture(VIDEO);
+  video = createCapture({
+        audio: false,
+        video: {
+            facingMode: {
+                exact: "environment"
+            }
+        }
+    });
   video.size(width / vScale, height / vScale);
 }
 
@@ -21,7 +28,7 @@ function draw() {
       var bright = (r + g + b) / 3;
       var w = map(bright, 0, 255, 0, vScale);
       noStroke();
-      fill(r,g,b);
+      fill(255);
       rectMode(CENTER);
       rect(x * vScale, y * vScale, w, w);
     }
