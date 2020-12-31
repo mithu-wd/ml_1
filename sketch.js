@@ -1,53 +1,30 @@
-var videoScale = 16;
+var video;
 
-// Number of columns and rows in our system
-var cols, rows;
+var vScale = 16;
 
 function setup() {
   createCanvas(640, 480);
-
-  // Initialize columns and rows
-  cols = width/videoScale;
-  rows = height/videoScale;
-
   pixelDensity(1);
   video = createCapture(VIDEO);
-  video.size(cols, rows);
-  //video.hide();
-}
-
-function mousePressed() {
+  video.size(width / vScale, height / vScale);
 }
 
 function draw() {
-  background(0);
+  background(51);
   video.loadPixels();
-
-  // Begin loop for columns
-  for (var i = 0; i < cols; i++) {
-    // Begin loop for rows
-    for (var j = 0; j < rows; j++) {
-      // Reversing x to mirror the image
-      // In order to mirror the image, the column is reversed with the following formula:
-      // mirrored column = width - column - 1
-      var loc = ((cols - i - 1) + j * cols) * 4;
-      
-      // The functions red(), green(), and blue() pull out the three color components from a pixel.
-      var r = video.pixels[loc   ]; 
-      var g = video.pixels[loc + 1];
-      var b = video.pixels[loc + 2];
-
-      // A rectangle size is calculated as a function of the pixel's brightness. 
-      // A bright pixel is a large rectangle, and a dark pixel is a small one.
-      var sz = map((r+g+b)/3, 0, 255, 0, videoScale);
-      rectMode(CENTER);
-      fill(255);
+  for (var y = 0; y < video.height; y++) {
+    for (var x = 0; x < video.width; x++) {
+      var index = (video.width - x + 1 + (y * video.width)) * 4;
+      var r = video.pixels[index + 0];
+      var g = video.pixels[index + 1];
+      var b = video.pixels[index + 2];
+      var bright = (r + g + b) / 3;
+      var w = map(bright, 0, 255, 0, vScale);
       noStroke();
-      // For every column and row, a rectangle is drawn at an (x,y) location scaled and sized by videoScale.
-      var x = i*videoScale;
-      var y = j*videoScale;
-      rect(x + videoScale/2, y + videoScale/2, sz, sz);
+      fill(r,g,b);
+      rectMode(CENTER);
+      rect(x * vScale, y * vScale, w, w);
     }
   }
-}
 
+}
