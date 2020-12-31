@@ -83,5 +83,16 @@ function setup() {
 function draw() {
     image(video,0,0);
     
+    for(let x=0;x<=video.width;x++){
+        for(let y=0;y<=video.height;y++){
+        let clr=get(x,y)
+        if((clr[0]+clr[1]+clr[2])/3>=200){
+            point(x, y)
+            strokeWeight(0.5)
+            stroke("red")
+        }
+        
+        }
 
+    }
 }
